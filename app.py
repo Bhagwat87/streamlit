@@ -1,19 +1,17 @@
 import streamlit as st
 st.set_page_config (page_title= "My Webpage")
-st.subheader("Hi, I am Bhagwat")
-st.title("A Data Analyst")
-st.write("I am passonate aboute data science")
+st.subheader("Find the largest, among the 3 given numbers")
 a = st.number_input("Insert a number A")
 b = st.number_input("Insert a number B")
 c = st.number_input("Insert a number C")
 
 def largest(a,b,c):
 	if a>=b and a>=c:
-		return a
+		return a, 'A'
 	elif b>=a and b>=c:
-		return b
+		return b, 'B'
 	elif c>=a and c>=b:
-		return c
-largest_number = largest(a,b,c)
+		return c, 'C'
+largest_number, name = largest(a,b,c)
 
-st.write("Largest Number is:", largest_number)
+st.write("Largest Number is:", name,', ' 'Value is:', largest_number)
